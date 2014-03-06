@@ -1,0 +1,11 @@
+{
+    "name": "angular-raf",
+    "main": "angular-raf.js",
+    "version": "0.0.1",
+    "authors": [
+        "Lorenzo Villani <lvillani@develer.com>"
+    ],
+    "description": "requestAnimationFrame() service for Angular.JS applications.",
+    "license": "MIT",
+    "homepage": "http://github.com/develersrl/angular-raf"
+}

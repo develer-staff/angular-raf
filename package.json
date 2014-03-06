@@ -1,0 +1,14 @@
+{
+    "name": "angular-raf",
+    "version": "0.0.1",
+    "description": "requestAnimationFrame() service for Angular.JS applications.",
+    "main": "angular-raf.js",
+    "author": "Lorenzo Villani <lvillani@develer.com.me>",
+    "license": "MIT",
+    "scripts": {
+        "prepublish": "coffee -c -b angular-raf.coffee"
+    },
+    "devDependencies": {
+        "coffee-script": "~1.7.1"
+    }
+}
