@@ -5,8 +5,7 @@ angular.module('angular-raf', []).service('raf', AngularRaf = (function() {
   function AngularRaf() {
     this.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame;
     console.assert(this.requestAnimationFrame, "Your user agent doesn't provide a suitable implementation of requestAnimationFrame() !");
-    this.cancelAnimationFrame = window.cancelAnimationFrame || window.webkitCancelAnimationFrame;
-    window.mozCancelAnimationFrame;
+    this.cancelAnimationFrame = window.cancelAnimationFrame || window.webkitCancelAnimationFrame || window.mozCancelAnimationFrame;
     console.assert(this.cancelAnimationFrame, "Your user agent doesn't provide a suitable implementation of cancelAnimationFrame() !");
   }
 

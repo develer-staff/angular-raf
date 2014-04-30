@@ -9,7 +9,7 @@ angular.module 'angular-raf', []
             console.assert @requestAnimationFrame, "Your user agent doesn't provide a suitable implementation of requestAnimationFrame() !"
 
             @cancelAnimationFrame = window.cancelAnimationFrame or
-                window.webkitCancelAnimationFrame
+                window.webkitCancelAnimationFrame or
                 window.mozCancelAnimationFrame
 
             console.assert @cancelAnimationFrame, "Your user agent doesn't provide a suitable implementation of cancelAnimationFrame() !"
