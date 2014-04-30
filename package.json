@@ -1,6 +1,6 @@
 {
     "name": "angular-raf",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "requestAnimationFrame() service for Angular.JS applications.",
     "main": "angular-raf.js",
     "author": "Lorenzo Villani <lvillani@develer.com.me>",
