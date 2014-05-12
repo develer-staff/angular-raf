@@ -3,10 +3,8 @@ var AngularRaf;
 
 angular.module('angular-raf', []).service('raf', AngularRaf = (function() {
   function AngularRaf() {
-    this.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame;
-    console.assert(this.requestAnimationFrame, "Your user agent doesn't provide a suitable implementation of requestAnimationFrame() !");
-    this.cancelAnimationFrame = window.cancelAnimationFrame || window.webkitCancelAnimationFrame || window.mozCancelAnimationFrame;
-    console.assert(this.cancelAnimationFrame, "Your user agent doesn't provide a suitable implementation of cancelAnimationFrame() !");
+    console.assert(window.requestAnimationFrame, "Your user agent doesn't provide a suitable implementation of requestAnimationFrame() !");
+    console.assert(window.cancelAnimationFrame, "Your user agent doesn't provide a suitable implementation of cancelAnimationFrame() !");
   }
 
   AngularRaf.prototype.onRenderFrame = function(scope, cb) {
@@ -14,11 +12,11 @@ angular.module('angular-raf', []).service('raf', AngularRaf = (function() {
     requestId = void 0;
     render = function() {
       cb();
-      return requestId = this.requestAnimationFrame(render);
+      return requestId = window.requestAnimationFrame(render);
     };
     disconnect = scope.$on('$locationChangeStart', function() {
       if (requestId) {
-        this.cancelAnimationFrame(requestId);
+        window.cancelAnimationFrame(requestId);
       }
       return disconnect();
     });
