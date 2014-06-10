@@ -1,7 +1,7 @@
 angular-raf
 ===========
 
-![RAF](https://raw.github.com/develersrl/angular-raf/master/raf.png)
+![RAF](raf.png)
 
 Provides some useful wrappers around `requestAnimationFrame()` and `cancelAnimationFrame()`
 integrated with Angular.JS view life-cycle.
