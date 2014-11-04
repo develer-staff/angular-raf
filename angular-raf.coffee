@@ -1,8 +1,8 @@
 angular.module 'angular-raf', []
-    .service 'raf', class AngularRaf
-        constructor: ->
-            console.assert window.requestAnimationFrame, "Your user agent doesn't provide a suitable implementation of requestAnimationFrame() !"
-            console.assert window.cancelAnimationFrame, "Your user agent doesn't provide a suitable implementation of cancelAnimationFrame() !"
+    .factory 'raf', ['$rootScope', ($rootScope) ->
+        apply: (f) ->
+            window.requestAnimationFrame () ->
+                $rootScope.$apply f
 
         onRenderFrame: (scope, cb) ->
             requestId = undefined
@@ -19,3 +19,4 @@ angular.module 'angular-raf', []
                 do disconnect
 
             do render
+    ]

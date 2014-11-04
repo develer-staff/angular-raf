@@ -39,6 +39,20 @@ angular.module('myapp', [
 
 ## Available helpers
 
+### apply
+
+`apply` schedules a `$rootScope.$apply` to run during the next frame, leveraging
+`window.requestAnimationFrame`.
+
+```javascript
+angular.module('myapp').controller('MyController', function ($scope, raf) {
+    raf.apply(function() {
+        // Update scope variables.
+    });
+});
+```
+
+
 ### onRenderFrame
 
 `onRenderFrame` wraps `requestAnimationFrame()` and takes a callback as first argument, calling it
